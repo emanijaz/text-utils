@@ -54,7 +54,7 @@ function App() {
         <Routes>
           <Route path="/about" element={<About mode={mode} />}>
           </Route>
-          <Route path="/" element={<TextForm heading= "type here...." mode={mode} displayAlert= {displayAlert}/>}>
+          <Route path="/" element={<TextForm heading= "Count words, characters, change cases, remove spaces..." mode={mode} displayAlert= {displayAlert}/>}>
           </Route>
         </Routes>
       </div>

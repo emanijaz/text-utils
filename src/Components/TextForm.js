@@ -49,9 +49,9 @@ const clearText = () => {
 }
 
 const copyText =  () => {
-    var mytext = document.getElementById('box')
-    mytext.select()
-    navigator.clipboard.writeText(mytext.value)
+    // var mytext = document.getElementById('box')
+    // mytext.select()
+    navigator.clipboard.writeText(text)
     props.displayAlert('success', 'Copied to Clipboard!')
 
 }
@@ -67,39 +67,42 @@ const handleOnChange = (event) => {
     setText(event.target.value)
 }
 
-
+const textAreaColor = {
+    backgroundColor: props.mode === 'dark' ? '#13466e' : 'white',
+    color: props.mode === 'dark' ? 'white' : '#042743'
+}
 
 return (
     <>
         <div className='container my-5'>
             <div id='text-area'  className={`form-group text-${props.mode=== 'light' ? 'dark' : 'light'}`}>
                 <h2><label htmlFor="box">{props.heading}</label></h2>
-                <textarea className="form-control" style={{...boldText}}  id="box" value={text} onChange={handleOnChange} rows="12"></textarea>
+                <textarea className="form-control" style={{...boldText, ...textAreaColor}}  id="box" value={text} onChange={handleOnChange} rows="12"></textarea>
             </div>
             <div className= "my-2">
-                <button type='button' className='btn btn-primary' onClick={upperCaseTextSetter}>Upper Case</button>
-                <button type='button' className='btn btn-primary mx-2' onClick={lowerCaseTextSetter}>Lower Case</button>
-                <button type='button' className='btn btn-primary mx-2' onClick={clearText}>Clear</button>
-                <button type='button' className='btn btn-primary mx-2' onClick={toggleBold}>{boldBtnText}</button>
-                <button type='button' className='btn btn-primary mx-2' onClick={copyText}>Copy</button>
-                <button type='button' className='btn btn-primary mx-2' onClick={removeExtraSpaces}>Remove Extra Spaces</button>
+                <button disabled={text.length === 0} type='button' className='btn btn-primary' onClick={upperCaseTextSetter}>Upper Case</button>
+                <button disabled={text.length === 0} type='button' className='btn btn-primary mx-2' onClick={lowerCaseTextSetter}>Lower Case</button>
+                <button disabled={text.length === 0} type='button' className='btn btn-primary mx-2' onClick={clearText}>Clear</button>
+                <button disabled={text.length === 0} type='button' className='btn btn-primary mx-2' onClick={toggleBold}>{boldBtnText}</button>
+                <button disabled={text.length === 0} type='button' className='btn btn-primary mx-2' onClick={copyText}>Copy</button>
+                <button disabled={text.length === 0} type='button' className='btn btn-primary mx-2' onClick={removeExtraSpaces}>Remove Extra Spaces</button>
             </div>
 
         </div>
         <div className={`container my-5 text-${props.mode=== 'light' ? 'dark' : 'light'}`}>
             <h4>Text Summary</h4>
             <div>
-                 <b>Words: </b>{text.split(' ').at(-1) === '' ? text.split(' ').length -1 : text.split(' ').length}
+                 <b>Words: </b>{text.split(/\s+/).filter((element)=> {return element.length!==0}).length}
             </div>
             <div>
-                 <b>Characters: </b>{text.length}
+                 <b>Characters: </b>{text.split(/\s+/).filter((element)=> {return element.length!==0}).length}
             </div>
             <div>
-                 <b>Minutes to Read: </b>{0.008 * text.split(' ').length}
+                 <b>Minutes to Read: </b>{0.008 * text.split(/\s+/).filter((element)=> {return element.length!==0}).length}
             </div>
             <div className='my-3'>
                 <h4>Preview</h4>
-                {text.length > 0 && <p>{text}</p>}
+                {text.length >0 ? text : "Nothing to preview..."}
             </div>
         </div>
     </>

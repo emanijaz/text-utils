@@ -24,14 +24,6 @@ export default function Navbar(props) {
              <input id="dark_mode" className="form-check-input" type="checkbox" onClick={props.toggle} role="switch"/>
              <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Dark Mode</label>
            </div>
-           {/* <div className={`form-check mx-3 form-switch text-${props.mode=== 'light' ? 'dark' : 'light'}`}>
-             <input id="grey_mode" className="form-check-input" type="checkbox" onClick={props.toggle} role="switch"/>
-             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Grey Mode</label>
-           </div>
-           <div className={`form-check form-switch text-${props.mode=== 'light' ? 'dark' : 'light'}`}>
-             <input id="orange_mode" className="form-check-input" type="checkbox" onClick={props.toggle} role="switch"/>
-             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Orange Mode</label>
-           </div> */}
         </div>
       </div>
       
@@ -43,9 +35,3 @@ Navbar.prototypes = {
   title: PropTypes.string.isRequired,
   home: PropTypes.string.isRequired
 }
-
-// Navbar.defaultprops = {
-//   title: 'Text Editor',
-//   home: 'Home'
-// }
-
