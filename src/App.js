@@ -6,7 +6,11 @@ import Navbar from './Components/Navbar';
 import About from './Components/About';
 
 import TextForm from './Components/TextForm';
-
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route, HashRouter
+} from "react-router-dom";
 
 function App() {
   
@@ -43,19 +47,18 @@ function App() {
   return (
 
     // <Router>
-      <div className="App">
-        <Navbar title= "Text Utils" home = "Home" mode={mode} toggle={toggleMode}/>
-        <Alert alert= {alert}/>
-        {/* <About mode={mode} /> */}
-
-        <TextForm heading= "Count words, characters, change cases, remove spaces..." mode={mode} displayAlert= {displayAlert}/>
-        {/* <Routes> */}
-          {/* <Route path="/about" element={<About mode={mode} />}> */}
-          {/* </Route> */}
-          {/* <Route path="/" element={<TextForm heading= "Count words, characters, change cases, remove spaces..." mode={mode} displayAlert= {displayAlert}/>}>
-          </Route>
-        </Routes> */}
-      </div>
+      <HashRouter basename="/">
+        <div className="App">
+          <Navbar title= "Text Utils" home = "Home" mode={mode} toggle={toggleMode}/>
+          <Alert alert= {alert}/>
+          
+          <Routes>
+              <Route path="/about" element={<About mode={mode} />} />
+              <Route path="/" element={<TextForm heading= "Count words, characters, change cases, remove spaces..." mode={mode} displayAlert= {displayAlert}/>} />
+              
+          </Routes>
+        </div>
+      </HashRouter>
     // </Router>
   );
 }
