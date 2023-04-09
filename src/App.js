@@ -7,7 +7,6 @@ import About from './Components/About';
 
 import TextForm from './Components/TextForm';
 import {
-  BrowserRouter as Router,
   Routes,
   Route, HashRouter
 } from "react-router-dom";
@@ -46,12 +45,10 @@ function App() {
 
   return (
 
-    // <Router>
       <HashRouter basename="/">
         <div className="App">
           <Navbar title= "Text Utils" home = "Home" mode={mode} toggle={toggleMode}/>
           <Alert alert= {alert}/>
-          
           <Routes>
               <Route path="/about" element={<About mode={mode} />} />
               <Route path="/" element={<TextForm heading= "Count words, characters, change cases, remove spaces..." mode={mode} displayAlert= {displayAlert}/>} />
@@ -59,7 +56,6 @@ function App() {
           </Routes>
         </div>
       </HashRouter>
-    // </Router>
   );
 }
 
