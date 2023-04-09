@@ -46,19 +46,21 @@ function App() {
 
   return (
 
-    <Router>
+    // <Router>
       <div className="App">
         <Navbar title= "Text Utils" home = "Home" mode={mode} toggle={toggleMode}/>
         <Alert alert= {alert}/>
-        
-        <Routes>
-          <Route path="/about" element={<About mode={mode} />}>
+        {/* <About mode={mode} /> */}
+
+        <TextForm heading= "Count words, characters, change cases, remove spaces..." mode={mode} displayAlert= {displayAlert}/>
+        {/* <Routes> */}
+          {/* <Route path="/about" element={<About mode={mode} />}> */}
+          {/* </Route> */}
+          {/* <Route path="/" element={<TextForm heading= "Count words, characters, change cases, remove spaces..." mode={mode} displayAlert= {displayAlert}/>}>
           </Route>
-          <Route path="/" element={<TextForm heading= "Count words, characters, change cases, remove spaces..." mode={mode} displayAlert= {displayAlert}/>}>
-          </Route>
-        </Routes>
+        </Routes> */}
       </div>
-    </Router>
+    // </Router>
   );
 }
 
