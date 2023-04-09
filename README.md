@@ -1,3 +1,20 @@
+# Description:
+
+This app helps the user to perform basic text functionalities like, converting to lowercase and uppercase, bolding the text, copying to clipboard and removing extra spaces. It also counts the text characters and provide a basic preview
+
+![image](https://user-images.githubusercontent.com/24871433/230777889-aa7d1917-6508-46d7-aa35-23bed45d104e.png)
+
+
+## Dark version:
+
+![image](https://user-images.githubusercontent.com/24871433/230777908-02309d34-14d9-4669-ac15-f3c27e33384d.png)
+
+You can find the live site here:
+
+https://emanijaz.github.io/text-utils/
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -69,18 +86,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-
-This app helps the user to perform basic text functionalities like, converting to lowercase and uppercase, bolding the text, copying to clipboard and removing extra spaces. It also counts the text characters and provide a basic preview
-
-
-![image](https://user-images.githubusercontent.com/24871433/230777889-aa7d1917-6508-46d7-aa35-23bed45d104e.png)
-
-
-Dark version:
-
-![image](https://user-images.githubusercontent.com/24871433/230777908-02309d34-14d9-4669-ac15-f3c27e33384d.png)
-
-You can find the live site here:
-
-https://emanijaz.github.io/text-utils/
 
